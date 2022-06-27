@@ -1,6 +1,6 @@
-const Note = ({note, notes, setNotes}) => {
+const Note = ({note, notes, setNotes, id}) => {
     const deleteHandler = () =>{
-        const newNotes = notes.filter(el => el.id !== note.id);
+        const newNotes = notes.filter(el => el.id !== id);
         setNotes(newNotes);
       }
     

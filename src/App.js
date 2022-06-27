@@ -64,11 +64,13 @@ function App() {
             onChange={setInputHandler}
             className="bg-gray-800 text-white  border-none placeholder-white resize-none focus:outline-none" placeholder="Type your notes..." ></textarea>
             <br />
-          <button onClick={setNotesHandler} className="p-2 bg-yellow-400  mt-2  rounded-sm">Save Note</button>
+          <button onClick={setNotesHandler} className="p-2 bg-yellow-400 cursor-pointer  mt-2  rounded-sm">Save Note</button>
         </div>
 
+<div className="grid grid-cols-1 gap-[2rem] mt-4 md:grid-cols-3">
+<NotesList setNotes={setNotes} notes={notes}  />
 
-      <NotesList setNotes={setNotes} notes={notes}  />
+</div>
 
 
 
