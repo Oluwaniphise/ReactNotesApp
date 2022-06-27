@@ -2,7 +2,7 @@ import Note from "./Note";
 
 const NotesList = ({setNotes, notes}) => {
     return ( 
-        <div className="px-2 grid grid-cols-1 gap-[2rem] mt-4 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-[2rem] mt-4 xl:grid-cols-3">
 
         {notes.map(note => (
             

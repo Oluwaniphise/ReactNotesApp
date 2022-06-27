@@ -53,7 +53,7 @@ function App() {
       outline-none border-gray-200  " placeholder="Search"  />
 
       <div className="">
-        <div className=" mx-3 md:mx-auto bg-gray-800 p-2 h-[200px] w-auto md:w-[350px] rounded-lg">
+        <div className="mx-3 md:mx-auto bg-gray-800 p-2 h-[200px] w-auto md:w-[350px] rounded-lg">
           <input type="text" value={title} autoFocus
 
             onChange={setTitleHandler}

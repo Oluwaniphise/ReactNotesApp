@@ -6,8 +6,8 @@ const Note = ({note, notes, setNotes}) => {
     
     return ( 
 
-                <div className=" mt-4">
-              <div key={note.id} className="relative bg-gray-200 p-2 w-auto h-auto md:w-[350px] rounded-lg">
+                // <div className=" mt-3 ">
+              <div key={note.id} className="mx-3 px-[3rem] relative bg-gray-200 p-2 w-auto h-auto md:w-[350px] rounded-lg">
                 <h3 className="text-black  text-2xl">{note.title}</h3>
                 <p className="mb-4">{note.date} at {note.time}</p>
                 <p className="text-black mb-[1rem]">{note.text}</p>
@@ -18,7 +18,7 @@ const Note = ({note, notes, setNotes}) => {
   
                 </div>
               </div>
-            </div>
+            // </div>
      
      );
 }
