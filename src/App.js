@@ -48,20 +48,21 @@ function App() {
         <h4 className="text-white rounded-xl w-[50%] mx-auto mt-4 p-3 bg-red-600 text-center">{error}</h4>
       )}
 
-      <input type="text" className="flex  mx-auto mb-5 mt-5 p-2 rounded-xl w-[50%] bg-gray-200 border-solid 
+      <input type="text" className="flex  mx-auto mb-5 mt-5 p-2 rounded-xl w-[100%] bg-gray-200 border-solid 
       outline-none border-gray-200  " placeholder="Search"  />
 
       <div className="">
-        <div className=" mx-auto bg-gray-800 p-2 h-[200px] w-[350px] rounded-lg">
+        <div className=" mx-3 md:mx-auto bg-gray-800 p-2 h-[200px] w-auto md:w-[350px] rounded-lg">
           <input type="text" value={title} autoFocus
 
             onChange={setTitleHandler}
             className="bg-gray-800 text-white border-none placeholder-white  focus:outline-none" placeholder="Title..." />
-
-          <textarea type="text" rows="4" cols="40" value={input}
+<br />
+          <textarea type="text" rows="4" cols="30" value={input}
 
             onChange={setInputHandler}
-            className="bg-gray-800 text-white border-none placeholder-white resize-none focus:outline-none" placeholder="Type your notes..." ></textarea>
+            className="bg-gray-800 text-white  border-none placeholder-white resize-none focus:outline-none" placeholder="Type your notes..." ></textarea>
+            <br />
           <button onClick={setNotesHandler} className="p-2 bg-yellow-400  mt-2  rounded-sm">Save Note</button>
         </div>
 
