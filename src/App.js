@@ -58,7 +58,7 @@ function App() {
             onChange={setTitleHandler}
             className="bg-gray-800 text-white border-none placeholder-white  focus:outline-none" placeholder="Title..." />
 <br />
-          <textarea type="text" rows="4" cols="30" value={input}
+          <textarea type="text" rows="4" cols="25" value={input}
 
             onChange={setInputHandler}
             className="bg-gray-800 text-white  border-none placeholder-white resize-none focus:outline-none" placeholder="Type your notes..." ></textarea>
