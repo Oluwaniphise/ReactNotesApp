@@ -30,6 +30,7 @@ function App() {
           date:date, title: title, id: Math.random() * 10 }
       ]);
       setInput('');
+      setTitle('');
       setError('');
     }
     else{
@@ -48,7 +49,7 @@ function App() {
         <h4 className="text-white rounded-xl w-[50%] mx-auto mt-4 p-3 bg-red-600 text-center">{error}</h4>
       )}
 
-      <input type="text" className="flex  mx-auto mb-5 mt-5 p-2 rounded-xl w-[100%] bg-gray-200 border-solid 
+      <input type="text" className="flex  mx-auto mb-5 mt-5 p-2 rounded-xl w-auto bg-gray-200 border-solid 
       outline-none border-gray-200  " placeholder="Search"  />
 
       <div className="">
