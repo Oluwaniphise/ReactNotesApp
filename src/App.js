@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NotesList from "./NotesList";
 import SearchText from "./SearchText";
 
@@ -14,6 +14,19 @@ function App() {
   const [notes, setNotes] = useState([]);
   const [error, setError] = useState('');
   const [searchText, setSearchText] = useState('');
+
+  useEffect(() =>{
+    const savedNotes = JSON.parse(localStorage.getItem('react-notes-app'));
+
+    if (savedNotes){
+      setNotes(savedNotes);
+    }
+
+  }, []);
+
+  useEffect(() =>{
+    localStorage.setItem('react-notes-app', JSON.stringify(notes));
+  }, [notes]);
 
   const setInputHandler = (e) => {
     setInput(e.target.value);
@@ -40,6 +53,7 @@ function App() {
   }
 
  
+
   return (
 
     <div className="container mb-3rem mx-auto">
@@ -71,7 +85,10 @@ function App() {
         </div>
 
 <div className="grid my-4 grid-cols-1 gap-[2rem] mt-[3rem] md:grid-cols-3">
-<NotesList setNotes={setNotes} 
+<NotesList 
+setInput={setInput} input={input}
+title={title} setTitle={setTitle}
+      setNotes={setNotes} 
       notes={notes.filter((note =>
         note.title.toLowerCase().includes(searchText)
   ))}  />

@@ -27,3 +27,13 @@ input{
     bottom:0.5rem;
     right:0.75rem;
 }
+.open-btn{
+    position:absolute;
+    padding:2rem;
+    top:0;
+    margin:0 auto;
+    display:flex;
+    justify-items:center;
+    align-items:center;
+    background:gray;
+}
