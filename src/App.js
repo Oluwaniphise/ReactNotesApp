@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NotesList from "./NotesList";
+import SearchText from "./SearchText";
 
 function App() {
   const today  = new Date();
@@ -8,12 +9,11 @@ function App() {
   const date = today.toLocaleDateString("en-UK");
   const time = hh + ":" + mm;
   
-
-
   const [input, setInput] = useState('');
   const [title, setTitle] = useState('');
   const [notes, setNotes] = useState([]);
   const [error, setError] = useState('');
+  const [searchText, setSearchText] = useState('');
 
   const setInputHandler = (e) => {
     setInput(e.target.value);
@@ -43,14 +43,17 @@ function App() {
   return (
 
     <div className="container mb-3rem mx-auto">
-      <h1 className="bg-slate-400 mx-auto text-center p-2 text-3xl">Your Daily Notes App</h1>
+      <h1 className="bg-yellow-400 mx-auto text-center p-2 text-3xl">Your Daily Notes App</h1>
       {/* error text */}
       {error && (
         <h4 className="text-white rounded-xl w-[50%] mx-auto mt-4 p-3 bg-red-600 text-center">{error}</h4>
       )}
+      
+      <div className="flex mx-auto mb-5 mt-5">
+      <SearchText searchText={searchText} setSearchText={setSearchText} />
 
-      <input type="text" className="flex  mx-auto mb-5 mt-5 p-2 rounded-xl w-auto bg-gray-200 border-solid 
-      outline-none border-gray-200  " placeholder="Search"  />
+      </div>
+
 
       <div className="">
         <div className="mx-3 md:mx-auto bg-gray-800 p-2 h-[200px] w-auto md:w-[350px] rounded-lg">
@@ -67,8 +70,11 @@ function App() {
           <button onClick={setNotesHandler} className="p-2 bg-yellow-400 cursor-pointer  mt-2  rounded-sm">Save Note</button>
         </div>
 
-<div className="grid grid-cols-1 gap-[2rem] mt-4 md:grid-cols-3">
-<NotesList setNotes={setNotes} notes={notes}  />
+<div className="grid my-4 grid-cols-1 gap-[2rem] mt-4 md:grid-cols-3">
+<NotesList setNotes={setNotes} 
+      notes={notes.filter((note =>
+        note.title.toLowerCase().includes(searchText)
+  ))}  />
 
 </div>
 
