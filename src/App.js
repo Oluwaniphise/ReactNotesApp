@@ -49,7 +49,7 @@ function App() {
         <h4 className="text-white rounded-xl w-[50%] mx-auto mt-4 p-3 bg-red-600 text-center">{error}</h4>
       )}
       
-      <div className="flex mx-auto mb-5 mt-5">
+      <div className="flex mx-3 md:mx-auto mb-5 mt-5">
       <SearchText searchText={searchText} setSearchText={setSearchText} />
 
       </div>
@@ -70,7 +70,7 @@ function App() {
           <button onClick={setNotesHandler} className="p-2 bg-yellow-400 cursor-pointer  mt-2  rounded-sm">Save Note</button>
         </div>
 
-<div className="grid my-4 grid-cols-1 gap-[2rem] mt-4 md:grid-cols-3">
+<div className="grid my-4 grid-cols-1 gap-[2rem] mt-[3rem] md:grid-cols-3">
 <NotesList setNotes={setNotes} 
       notes={notes.filter((note =>
         note.title.toLowerCase().includes(searchText)
